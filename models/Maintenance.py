@@ -13,5 +13,5 @@ class Maintenance:
     def is_time_for_maintenance_check(self) -> bool:
         return self._initial_used_life_months % self._check_interval_months == 0
 
-    def increment_used_life(self):
+    def increment_used_life(self) -> None:
         self._initial_used_life_months += 1

@@ -38,7 +38,7 @@ class Statement:
     def amount(self, new_amount: int) -> None:
         self._amount = new_amount
 
-    def __init__(self, date: date, rate: int, is_end: bool = False, calculate_amount: bool = True):
+    def __init__(self, date: date, rate: int, is_end: bool = False, calculate_amount: bool = True) -> None:
         self._date = date
         if rate is not None and calculate_amount: 
             self._amount = self.get_amount(rate, is_end) 

@@ -16,7 +16,7 @@ class InvestmentReturn:
         self.num_samples = num_samples
         self.residual_value = residual_value
         
-    def __calculate_cashflows(self) -> None:
+    def __calculate_cashflows(self) -> tuple[list[Statement], list[Statement]]:
         # First Statement on ECD
         cashflows = [Statement(
             self.lease.lessor.economic_closing_date, -self.lease.lessor.aircraft_purchase_value, calculate_amount=False)]
@@ -73,7 +73,7 @@ class InvestmentReturn:
 
         return cashflows, mr_balance 
 
-    def __calculate_xirr(self):
+    def __calculate_xirr(self) -> tuple[list[Statement], list[Statement], float] :
         cashflows, mr_balance = self.__calculate_cashflows()
         dates = []
         amounts = []
@@ -88,7 +88,7 @@ class InvestmentReturn:
         return serialisable_cashflow, serialisable_mr_balance, round(xirr(dates, amounts), DECIMALS)
 
 
-    def generate_investment_return(self):
+    def generate_investment_return(self) -> dict:
         xirrs = np.array([])
         
         for i in range(1, self.num_samples + 1):

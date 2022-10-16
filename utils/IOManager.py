@@ -7,7 +7,7 @@ from utils.DatesFormatter import DatesFormatter
 
 class IOManager:
 
-    def __transform_data(self, input_data) -> None:
+    def __transform_data(self, input_data) -> dict:
         input_data[INPUT_PRICING_DICT_NAME][INPUT_PRICING_ECD_NAME] = DatesFormatter.get_formatted_date(
             input_data[INPUT_PRICING_DICT_NAME][INPUT_PRICING_ECD_NAME])
         input_data[INPUT_LEASE_DICT_NAME][INPUT_LEASE_START_DATE] = DatesFormatter.get_formatted_date(
