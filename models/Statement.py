@@ -4,7 +4,7 @@ from constants import *
 from utils.DatesFormatter import DatesFormatter
 
 class Statement:
-    def get_amount(self, rate:float, is_end:bool=False) -> float:
+    def get_amount(self, rate:int, is_end:bool=False) -> int:
         current_day = self._date.day
 
         if current_day == 1:
@@ -20,7 +20,7 @@ class Statement:
                 count_days_to_pay = lease_month_days - current_day
             payment = count_days_to_pay * daily_payment
             
-            return round(payment, DECIMALS)
+            return round(payment)
 
     @property
     def date(self) -> date:
@@ -31,14 +31,14 @@ class Statement:
         self._date = new_date
     
     @property
-    def amount(self) -> float:
+    def amount(self) -> int:
         return self._amount
 
     @amount.setter
-    def amount(self, new_amount: float) -> None:
+    def amount(self, new_amount: int) -> None:
         self._amount = new_amount
 
-    def __init__(self, date: date, rate: float, is_end: bool = False, calculate_amount: bool = True):
+    def __init__(self, date: date, rate: int, is_end: bool = False, calculate_amount: bool = True):
         self._date = date
         if rate is not None and calculate_amount: 
             self._amount = self.get_amount(rate, is_end) 

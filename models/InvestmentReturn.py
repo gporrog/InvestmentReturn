@@ -73,7 +73,7 @@ class InvestmentReturn:
 
         return cashflows, mr_balance 
 
-    def __calculate_xirr(self) -> float:
+    def __calculate_xirr(self):
         cashflows, mr_balance = self.__calculate_cashflows()
         dates = []
         amounts = []
