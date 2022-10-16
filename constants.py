@@ -14,7 +14,6 @@ INPUT_LEASE_DICT_NAME = "lease"
 INPUT_MAINT_DICT_NAME = "maintenance"
 INPUT_RESIDUAL_DICT_NAME = "residual_value"
 
-## TODO ADD THE REST OF NAMES
 INPUT_PRICING_ECD_NAME = "economic_closing_date"
 INPUT_PRICING_NET_PRICE = "net_price"
 INPUT_PRICING_NUM_SAMPLES = "num_samples"
