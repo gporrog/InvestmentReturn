@@ -16,6 +16,7 @@ def perform_quant_dev():
 
     try:
         data = iom.input_data
+        print("The data is validated and transformed. Initializing the expected IRR calculation.")
         
         lessor = Lessor(
             data[INPUT_PRICING_DICT_NAME][INPUT_PRICING_ECD_NAME],

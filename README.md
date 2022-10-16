@@ -1,6 +1,7 @@
 ## Pre-requisites
 
-1. Python 3.9.*
+1. Python 3.9.* and pip
+1.1. If you create a new enviroment be sure to have the previous.
 2. Install requirements: <br/>`pip install -r requirements.txt`
 
 ## Execution
