@@ -1,5 +1,6 @@
 from argparse import ArgumentParser
 import json
+import os
 
 from constants import *
 from utils.DatesFormatter import DatesFormatter
@@ -90,7 +91,7 @@ class IOManager:
 
     def __get_input_data(self) -> None:
         input_path: str = self.__arguments[PATH_JSON_PARAM_NAME]
-        name, ext = input_path.split(".")
+        name, ext = os.path.splitext(input_path)
         if name != "" and ext == INPUT_FILE_EXT:
             try:
                 with(open(input_path, "r")) as input_file:
