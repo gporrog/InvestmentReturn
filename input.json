@@ -1,0 +1,24 @@
+{
+    "pricing": {
+        "economic_closing_date": "2020-04-01",
+        "net_price": 45000000,
+        "num_samples": 1000
+    },
+    "lease": {
+        "start_date": "2020-07-15",
+        "end_date": "2026-07-15",
+        "monthly_rent_dollars": 150000,
+        "monthly_mr_rate_dollars": 135000
+    },
+    "maintenance": {
+        "check_interval_months": 60,
+        "initial_used_life_months": 30,
+        "check_cost_min_dollars": 2000000,
+        "check_cost_max_dollars": 5000000
+    },
+    "residual_value": {
+        "appraised_aircraft_value": 35000000,
+        "as_of": "2020-07-15",
+        "depreciation_rate": 0.05
+    }
+}
